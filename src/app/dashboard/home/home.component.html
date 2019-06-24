@@ -1,0 +1,25 @@
+<div class="container">
+  <app-navbar title="Dashboard"></app-navbar>
+ 
+  <div class="row" style="margin-top: 10px">
+    
+    <div style="height: 600px;" class="col-md-3 col-sm-6 col-xs-6 mt-5"  *ngFor="let movie of service.movies ; let i = movie" >
+      <app-imagecard
+        image="{{movie.Poster}}"
+        title="{{movie.Title}}"
+        desc="Código: #{{movie.imdbID}}"
+        footerTitle="{{movie.Year}}"
+      >
+      </app-imagecard>
+
+  
+        <button mat-button (click)="show_title(movie.imdbID)">Ver más detalles</button>
+        <button mat-button>Agregar a favoritos</button>        
+     
+
+    </div>
+    
+  </div>
+
+
+</div>
