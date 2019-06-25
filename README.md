@@ -1,1 +1,3 @@
-"# buscaPelis" 
+Instalación:
+npm i
+npm start
