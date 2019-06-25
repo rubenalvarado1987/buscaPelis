@@ -1,0 +1,31 @@
+
+<mat-dialog-content class="mat-typography">
+  <div class="container">
+    <div class="row" style="width: 300px; float: left; margin-top: 10px">        
+          <app-imagecard
+            image="{{service.moviefull.Poster}}"
+            title="{{service.moviefull.Title}}"
+            desc="Código: #{{service.moviefull.imdbID}}"
+            footerTitle="{{service.moviefull.Year}}"
+          >
+          </app-imagecard>    
+    </div>
+    <div class="row" style="width: 350px; float: left; margin-top: 10px; margin-left: 50px;" >
+      <h2>{{service.moviefull.Title}}</h2>
+      <p>Actores: {{service.moviefull.Actors}}</p>
+      <p>Premios: {{service.moviefull.Awards}}</p>
+      <p>Costo: {{service.moviefull.BoxOffice}}</p>
+      <p>País: {{service.moviefull.Country}}</p>
+      <p>Director: {{service.moviefull.Director}}</p>
+      <p>Género: {{service.moviefull.Genre}}</p>
+      <p>Idiomas: {{service.moviefull.Language}}</p>
+      <p>Trama: {{service.moviefull.Plot}}</p>
+      <p>Website: {{service.moviefull.Website}}</p>
+      <p>Duración: {{service.moviefull.Runtime}}</p>
+      <p>Votos: {{service.moviefull.imdbVotes}}</p>
+    </div>
+    </div>    
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cerrar</button>  
+</mat-dialog-actions>
