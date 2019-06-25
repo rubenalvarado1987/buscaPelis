@@ -10,6 +10,7 @@ import {
 } from "@angular/common/http";
 import { catchError, tap, map } from "rxjs/operators";
 import { Movie } from 'app/models/movie.model';
+import { Moviefull  } from 'app/models/moviefull.model'
 
 @Injectable()
 export class SettingsService {
@@ -20,6 +21,7 @@ export class SettingsService {
   public sidebarColor = '#D80B0B';
   public sidebarColorUpdate: EventEmitter<string> = new EventEmitter();
   public movies: Movie[];
+  public moviefull: Moviefull[];
 
   constructor(private http: HttpClient) { }
 
@@ -46,5 +48,8 @@ export class SettingsService {
   }
   getMovieByName(name: string): Observable<any>{
     return this.http.get<any>(environment.url_api + "?"+ environment.api_key + "&" + environment.endpoint_search + name)
+  }
+  getMovieById(idMovie: string): Observable<any>{
+    return this.http.get<any>(environment.url_api + "?"+ environment.api_key + "&" + environment.endpoint_id + idMovie)
   }
 }
