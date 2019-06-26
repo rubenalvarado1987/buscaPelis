@@ -2,7 +2,7 @@
   <div class="left-part">
     
     <mat-form-field color="#ff0000">
-      <input matInput type="search" placeholder="Buscar" (click)="search()" [(ngModel)]="txtInput">
+      <input matInput type="search" placeholder="Buscar" (change)="search()" [(ngModel)]="txtInput">
     </mat-form-field>
     <button mat-mini-fab class="search-btn" (click)="search()"><i class="material-icons" style="font-size:18px;">search</i></button>
   </div>
