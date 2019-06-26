@@ -32,6 +32,7 @@ import { SettingsService } from './services/settings.service';
 import { WizardComponent } from './dashboard/component/wizard/wizard.component';
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import { MovieDetailComponent } from './dashboard/home/movie-detail/movie-detail.component';
+import { FavoritesComponent } from './dashboard/home/favorites/favorites.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { MovieDetailComponent } from './dashboard/home/movie-detail/movie-detail
     PriceTableComponent,
     PanelsComponent,
     WizardComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
