@@ -22,6 +22,7 @@ export class SettingsService {
   public sidebarColorUpdate: EventEmitter<string> = new EventEmitter();
   public movies: Movie[];
   public moviefull: Moviefull[];
+  public moviesFavorities: any;
 
   constructor(private http: HttpClient) { }
 

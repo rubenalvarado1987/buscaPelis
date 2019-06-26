@@ -4,6 +4,7 @@ import { SettingsService } from 'app/services/settings.service'
 import { Movie } from 'app/models/movie.model';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MovieDetailComponent } from 'app/dashboard/home/movie-detail/movie-detail.component';
+import {BehaviorSubject, Observable, zip} from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +16,10 @@ import { MovieDetailComponent } from 'app/dashboard/home/movie-detail/movie-deta
 export class HomeComponent implements OnInit {
 
   movies: Movie[];
+  movies_favorites: [];
+  numbers_favorites_pelis: any;
+
+  
 
   constructor(public service: SettingsService,
     public dialog: MatDialog) {
@@ -22,11 +27,22 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     console.log('Variables de entorno',environment)
+    this.service.moviesFavorities = new BehaviorSubject([]);
   }
 
   show_title(code){
     console.log('Pelicula buscada:',code);
     this.openDialog(code)
+
+  }
+
+  add_favorite(movie){
+
+    this.service.moviesFavorities.next([...this.service.moviesFavorities.getValue(), movie])
+    
+    localStorage.setItem("favorites", JSON.stringify(this.service.moviesFavorities._value));
+
+    console.log("Peliculas agregadas a favoritos:", localStorage.getItem("favorites"));
 
   }
 
