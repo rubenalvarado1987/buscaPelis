@@ -10,7 +10,7 @@ import { Movie } from 'app/models/movie.model';
 export class NavbarComponent implements OnInit {
   @Input() title: string;
 
-  txtInput: string = "Batman";
+  txtInput: string = "batman";
   movies: Movie[];
 
   constructor(
@@ -18,6 +18,14 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.service.getMovieByName(this.txtInput).subscribe(data => {
+
+      console.log("Respuesta Inicial del API:",data)
+
+      if (data.Search){
+        this.service.movies = data.Search;
+      }
+    })
   }
 
   menuClick() {
