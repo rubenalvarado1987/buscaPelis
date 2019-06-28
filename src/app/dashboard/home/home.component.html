@@ -2,13 +2,13 @@
   <app-navbar title="Dashboard"></app-navbar> 
   <div class="row" style="margin-top: 10px">
     <div class="img-avatar" >
-      <img class="avatar" src="{{service.users.avatar_url?service.users.avatar_url:''}}">
+      <img class="avatar" src="{{service.avatar_url}}">
     </div>
     <div class="detalle-usuario" >
-      <h4>Usuario: {{service.users.name?service.users.name:''}}</h4>
-      <h4>Número de seguidores: {{service.users.following?service.users.following:''}}</h4>
-      <h4>E-mail: {{service.users.email?service.users.email:''}}</h4>
-      <h4>Bio: {{service.users.bio?service.users.bio:''}}</h4>
+      <h4>Usuario: {{service.name}}</h4>
+      <h4>Número de seguidores: {{service.following}}</h4>
+      <h4>E-mail: {{service.email}}</h4>
+      <h4>Bio: {{service.bio}}</h4>
     </div>
   </div>
 </div>

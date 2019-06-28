@@ -25,7 +25,11 @@ export class NavbarComponent implements OnInit {
       
 
       if (data){
-        this.service.users = data;
+        //this.service.users = data;
+        this.service.avatar_url = data.avatar_url;
+        this.service.name = data.name;
+        this.service.following = data.fallowing;
+        this.service.bio = data.bio; 
       }
 
       console.log("Respuesta Inicial del API:",this.service.users)
@@ -47,7 +51,10 @@ export class NavbarComponent implements OnInit {
       console.log("Respuesta del API:",data)
 
       if (data){
-        this.service.users = data;
+        this.service.avatar_url = data.avatar_url;
+        this.service.name = data.name;
+        this.service.following = data.fallowing;
+        this.service.bio = data.bio; 
       }
 
 

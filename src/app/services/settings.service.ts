@@ -21,7 +21,13 @@ export class SettingsService {
   public sidebarColorUpdate: EventEmitter<string> = new EventEmitter();
   public users: User[];
   public favorities: any;
-
+  
+  avatar_url: string = '';
+  bio: string= '';
+  email: string= '';
+  following: number= 0;
+  name: string= '';
+ 
   constructor(private http: HttpClient) { }
 
   getSidebarImageIndex(): number {

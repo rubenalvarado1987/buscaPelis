@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
 
   users: User[];
 
+
   constructor(public service: SettingsService,
     ) {
   }
