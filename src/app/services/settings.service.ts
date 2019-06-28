@@ -9,8 +9,7 @@ import {
   HttpErrorResponse,
 } from "@angular/common/http";
 import { catchError, tap, map } from "rxjs/operators";
-import { Movie } from 'app/models/movie.model';
-import { Moviefull  } from 'app/models/moviefull.model'
+import { User } from 'app/models/user.model';
 
 @Injectable()
 export class SettingsService {
@@ -20,9 +19,8 @@ export class SettingsService {
   public sidebarFilterUpdate: EventEmitter<string> = new EventEmitter();
   public sidebarColor = '#D80B0B';
   public sidebarColorUpdate: EventEmitter<string> = new EventEmitter();
-  public movies: Movie[];
-  public moviefull: Moviefull[];
-  public moviesFavorities: any;
+  public users: User[];
+  public favorities: any;
 
   constructor(private http: HttpClient) { }
 
@@ -47,10 +45,8 @@ export class SettingsService {
     this.sidebarColor = color;
     this.sidebarColorUpdate.emit(this.sidebarColor);
   }
-  getMovieByName(name: string): Observable<any>{
-    return this.http.get<any>(environment.url_api + "?"+ environment.api_key + "&" + environment.endpoint_search + name)
+  getUserByName(name: string): Observable<any>{
+    return this.http.get<any>(environment.url_api + environment.endpoint_search + name)
   }
-  getMovieById(idMovie: string): Observable<any>{
-    return this.http.get<any>(environment.url_api + "?"+ environment.api_key + "&" + environment.endpoint_id + idMovie)
-  }
+ 
 }

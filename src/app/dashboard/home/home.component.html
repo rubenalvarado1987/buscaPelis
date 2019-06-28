@@ -1,25 +1,14 @@
 <div class="container">
-  <app-navbar title="Dashboard"></app-navbar>
- 
+  <app-navbar title="Dashboard"></app-navbar> 
   <div class="row" style="margin-top: 10px">
-    
-    <div style="height: 600px;" class="col-md-3 col-sm-6 col-xs-6 mt-5"  *ngFor="let movie of service.movies ; let i = movie" >
-      <app-imagecard
-        image="{{movie.Poster}}"
-        title="{{movie.Title}}"
-        desc="Código: #{{movie.imdbID}}"
-        footerTitle="{{movie.Year}}"
-      >
-      </app-imagecard>
-
-  
-        <button mat-button (click)="show_title(movie.imdbID)">Ver más detalles</button>
-        <button mat-button (click)="add_favorite(movie)">Agregar a favoritos</button>        
-     
-
+    <div class="img-avatar" >
+      <img class="avatar" src="{{service.users.avatar_url}}">
     </div>
-    
+    <div class="detalle-usuario" >
+      <h4>Usuario: {{service.users.name}}</h4>
+      <h4>Número de seguidores: {{service.users.following}}</h4>
+      <h4>E-mail: {{service.users.email}}</h4>
+      <h4>Bio: {{service.users.bio}}</h4>
+    </div>
   </div>
-
-
 </div>
