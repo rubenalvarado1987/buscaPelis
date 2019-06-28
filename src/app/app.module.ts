@@ -8,12 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './dashboard/home/home.component';
 import 'hammerjs';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { FigurecardComponent } from './shared/figurecard/figurecard.component';
-import { ImagecardComponent } from './shared/imagecard/imagecard.component';
-import { MsgIconBtnComponent } from './shared/msgiconbtn/msgiconbtn.component';
 import { RootComponent } from './dashboard/root/root.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
 import { SettingsService } from './services/settings.service';
 
 import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
@@ -23,12 +18,7 @@ import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/h
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    FigurecardComponent,
-    ImagecardComponent,
-    MsgIconBtnComponent,
-    RootComponent,
-    HeaderComponent,
-    FooterComponent,
+    RootComponent
   ],
   imports: [
     BrowserModule,
